@@ -854,3 +854,158 @@ footer {
     gap: 2px 10px;
     min-width: 300px;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* =========================================
+   RESPONSIVE PATCH (MOBILE & TABLET FIXES)
+   Add this to the very bottom of style.css
+   ========================================= */
+
+/* 1. Global Fixes for Images */
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* 2. Tablet Size (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Add breathing room to containers */
+    .navigation,
+    .hero,
+    .trustarea,
+    .feature-section,
+    .testimonials-section,
+    .frontier-section,
+    .changelog-section,
+    .joinus-block,
+    .highlights-section,
+    .cta-section,
+    .footer-content {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow-x: hidden;
+    }
+
+    /* Fix Trust Logos: Break into 4 columns instead of 8 */
+    .trustarea-logos {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+    }
+
+    /* Stack Feature Grid (Text top, Image bottom) */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Fix the "Reverse" grid so images don't end up on top weirdly */
+    .feature-grid.reverse {
+        direction: ltr;
+    }
+    .feature-content {
+        margin: 0 auto;
+        max-width: 600px; /* Readability fix */
+    }
+
+    /* Fix Highlights Section Layout */
+    .highlights-section {
+        grid-template-columns: 1fr; /* Stack sidebar and posts */
+    }
+    .highlights-sidebar {
+        position: static;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .highlights-title {
+        padding-left: 0;
+    }
+
+    /* CRITICAL: Reset the huge margins on blog posts */
+    .blog-post {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .view-more-link {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+    }
+
+    /* Footer: 3 Columns */
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+    footer {
+        padding-left: 20px; /* Reset the big left padding */
+    }
+}
+
+/* 3. Mobile Size (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Nav: Hide links, adjust buttons */
+    .nav-links {
+        display: none;
+    }
+    .nav-buttons1,
+    .nav-buttons2 {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* Hero Text */
+    .hero {
+        padding-top: 100px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    /* Trust Logos: 2 columns on phone */
+    .trustarea-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Force all Grids to 1 column */
+    .testimonials-grid,
+    .frontier-grid,
+    .changelog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Join Us Section */
+    .joinus-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    /* Footer: 1 Column on phone */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    .footer-links {
+        align-items: center; /* Center links */
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-actions {
+        margin-right: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* CTA Text */
+    .cta-title {
+        font-size: 40px;
+    }
+}
