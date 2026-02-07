@@ -4,7 +4,7 @@ A responsive recreation of the [Mintlify](https://mintlify.com) landing page, fo
 
 ## 🚀 Live Demo
 
-**View the Live Site:** [INSERT YOUR NETLIFY LINK HERE]
+**View the Live Site:** https://mentlify-project-ayush-pokhariya-07.netlify.app/
 
 ## 🛠️ Tech Stack
 
